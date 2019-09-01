@@ -1,6 +1,6 @@
 # Brain tumor segmentation in MRI images using U-Net
 
-Here, I have implemented a U-Net from paper ["U-Net: Convolutional Networks for Biomedical
+Here, I have implemented a U-Net from the paper ["U-Net: Convolutional Networks for Biomedical
 Image Segmentation"](https://arxiv.org/pdf/1505.04597.pdf) to segment tumor in MRI images of brain.
 
 There are 3 types of brain tumor:
@@ -8,7 +8,7 @@ There are 3 types of brain tumor:
 2. glioma
 3. pituitary tumor
 
-## Examples of predicted segment by the current U-Net implementation.
+## Examples of predicted tumor segment by the current U-Net implementation.
 meningioma       	  | glioma		| 	pituitary tumor             
 :-------------------------:|:-------------------------:|:------------------------:
 ![](samples/sample1.png)  |  ![](samples/sample2.png)		| ![](samples/sample3.png)
@@ -34,11 +34,11 @@ I have used combination of multiple losses which includes binary crossentropy, d
 
 I have used the metric called IOU (Intersection over Union) metric to track progress of training and trained Unet with Adam optimizer for 40-60 epochs with decaying learning rate between 1e-3 to 1e-4. I have also performed only one Image augmentation i.e. horizontal flip. Train and test split was stratified using type of tumor.
 
-![Performance](screenshots/performance.png)
+![Performance](screenshots/performance2.png)
 
 
 Detailed architecure is given below.
-![Unet Architecture](screenshots/unet_arch.png)
+![Unet Architecture](screenshots/unet-tumor-seg.png)
 
 ## Possible Improvements
 1. Can use transfer learning to utilize state-of-the-art model like VGG, Inception, Resnet.
